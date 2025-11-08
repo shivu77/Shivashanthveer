@@ -35,13 +35,13 @@ export function AboutSection({ standalone = false }: AboutSectionProps) {
                   passionate about building real-world intelligent systems. I
                   work on LLM-based assistants, RAG pipelines, security
                   detection models, and voice automation. I care about clarity,
-                  reproducibility, and solutions that scale. I am also currently
+                  reproducibility, and solutions that scale. I am currently
                   pursuing a <strong>Minor in Artificial Intelligence</strong> from
                   <strong> IIT Ropar</strong>.
                 </p>
 
                 <p className="text-lg leading-relaxed mt-4">
-                  Outside engineering, I enjoy football (Bengaluru FC),
+                  Outside engineering, I enjoy football,
                   learning multiple languages, and exploring generative AI
                   research.
                 </p>
