@@ -10,6 +10,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Shivashanthveer N - AI/ML Engineer",
   description: "AI/ML Engineer | Researcher | Developer - Building practical AI that ships",
+  metadataBase: new URL('https://shivu77.github.io/Shivashanthveer'),
 }
 
 export default function RootLayout({

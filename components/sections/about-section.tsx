@@ -28,7 +28,7 @@ export function AboutSection({ standalone = false }: AboutSectionProps) {
             <CardContent className="p-8 md:p-12">
               <div className="prose prose-lg dark:prose-invert max-w-none">
                 <p className="text-lg leading-relaxed">
-                  I'm <strong>Shivashanthveer N</strong>, an AI/ML engineer
+                  I&apos;m <strong>Shivashanthveer N</strong>, an AI/ML engineer
                   passionate about building real-world intelligent systems. I
                   work on LLM-based assistants, RAG pipelines, security
                   detection models, and voice automation. I care about clarity,

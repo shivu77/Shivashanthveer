@@ -41,27 +41,22 @@ export function ContactSection({ standalone = false }: ContactSectionProps) {
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true)
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+      // For static export, API routes don't work
+      // Use mailto link as fallback or integrate with Formspree/EmailJS
+      const mailtoLink = `mailto:shivashanthveernainagali@gmail.com?subject=Contact from ${encodeURIComponent(data.name)}&body=${encodeURIComponent(data.message)}%0D%0A%0D%0AFrom: ${encodeURIComponent(data.email)}`
+      
+      // Try to open mailto link
+      window.location.href = mailtoLink
+      
+      toast({
+        title: "Opening email client",
+        description: "Please send your message via email, or contact me through the social links below.",
       })
-
-      if (response.ok) {
-        toast({
-          title: "Message sent!",
-          description: "I'll get back to you soon.",
-        })
-        reset()
-      } else {
-        throw new Error("Failed to send message")
-      }
+      reset()
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again.",
+        description: "Please contact me directly via email using the link below.",
         variant: "destructive",
       })
     } finally {
@@ -102,7 +97,7 @@ export function ContactSection({ standalone = false }: ContactSectionProps) {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
           <p className="text-muted-foreground text-lg">
-            Let's connect and build something amazing together
+            Let&apos;s connect and build something amazing together
           </p>
         </motion.div>
 

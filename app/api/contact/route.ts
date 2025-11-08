@@ -1,7 +1,16 @@
 import { NextRequest, NextResponse } from "next/server"
-import { Resend } from "resend"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Note: API routes don't work with static export
+// This file is kept for reference but won't be used in production
+const getResend = () => {
+  if (typeof window !== 'undefined') return null
+  try {
+    const { Resend } = require("resend")
+    return new Resend(process.env.RESEND_API_KEY || '')
+  } catch {
+    return null
+  }
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,7 +26,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Try Resend first, fallback to console log if not configured
-    if (process.env.RESEND_API_KEY) {
+    const resend = getResend()
+    if (resend && process.env.RESEND_API_KEY) {
       try {
         await resend.emails.send({
           from: "Portfolio Contact <onboarding@resend.dev>", // Update with your domain
@@ -30,7 +40,7 @@ export async function POST(request: NextRequest) {
             <p><strong>Message:</strong></p>
             <p>${message.replace(/\n/g, "<br>")}</p>
           `,
-          replyTo: email,
+          reply_to: email,
         })
 
         return NextResponse.json({ success: true })
