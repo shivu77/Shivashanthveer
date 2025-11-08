@@ -1,0 +1,45 @@
+---
+title: "Network-Based Intrusion Detection (CNN–LSTM)"
+slug: "ids-cnn-lstm"
+summary: "Hybrid deep model for detecting network attack patterns."
+tech: ["Python", "PyTorch", "Pandas"]
+---
+
+## Overview
+
+This project implements a hybrid deep learning model combining Convolutional Neural Networks (CNN) and Long Short-Term Memory (LSTM) networks for network-based intrusion detection. The model can identify various types of network attacks by analyzing network traffic patterns.
+
+## Architecture
+
+### CNN Component
+- **Feature Extraction**: Uses convolutional layers to extract spatial patterns from network traffic data
+- **Local Patterns**: Identifies local features in network packets
+
+### LSTM Component
+- **Temporal Patterns**: Captures sequential dependencies in network traffic
+- **Long-term Memory**: Maintains context over extended sequences
+- **Attack Pattern Recognition**: Identifies attack patterns that evolve over time
+
+### Hybrid Approach
+The combination of CNN and LSTM allows the model to:
+- Extract both spatial and temporal features
+- Identify complex attack patterns
+- Handle sequential network traffic data effectively
+
+## Dataset
+
+The model was trained on standard network intrusion detection datasets, including:
+- Normal network traffic
+- Various attack types (DoS, DDoS, Probe, R2L, U2R)
+
+## Results
+
+The hybrid model achieved high accuracy in detecting network intrusions, outperforming single-model approaches. The combination of CNN and LSTM proved effective for this task, as network attacks often exhibit both spatial and temporal patterns.
+
+## Applications
+
+- **Network Security**: Real-time intrusion detection in network environments
+- **Threat Detection**: Identifying malicious network activities
+- **Security Monitoring**: Continuous monitoring of network traffic
+
+
