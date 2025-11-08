@@ -58,7 +58,7 @@ export function HeroSection({ standalone = false }: HeroSectionProps) {
 
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl glass">
                 <Image
-                  src="/profile-photo.jpg"
+                  src="public/profile-photo.jpg"
                   alt="Shivashanthveer"
                   width={500}
                   height={500}
