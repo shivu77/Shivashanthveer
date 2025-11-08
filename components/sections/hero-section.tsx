@@ -56,16 +56,7 @@ export function HeroSection({ standalone = false }: HeroSectionProps) {
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full blur-2xl animate-pulse" />
 
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl glass">
-                <Image
-                  src="public/profile-photo.jpg"
-                  alt="Shivashanthveer"
-                  width={500}
-                  height={500}
-                  className="object-cover w-full h-full"
-                  priority
-                />
-              </div>
+
 
               <motion.div
                 className="absolute -bottom-4 left-1/2 -translate-x-1/2"
