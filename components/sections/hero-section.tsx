@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { Download, ArrowRight, Code, Brain, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useRef } from "react"
-import Image from "next/image"
 
 interface HeroSectionProps {
   standalone?: boolean
@@ -44,38 +43,12 @@ export function HeroSection({ standalone = false }: HeroSectionProps) {
       }`}
     >
       <div className="container mx-auto px-4 py-20">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
-
-          {/* Photo Section */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full blur-2xl animate-pulse" />
-
-
-
-              <motion.div
-                className="absolute -bottom-4 left-1/2 -translate-x-1/2"
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <div className="w-16 h-1 bg-primary/30 rounded-full" />
-              </motion.div>
-            </div>
-          </motion.div>
+        <div className="flex flex-col items-center text-center gap-8">
 
           {/* Text Content */}
           <motion.div
             style={{ y, opacity }}
-            className="relative z-10 text-center lg:text-left flex-1"
+            className="relative z-10 max-w-3xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -99,7 +72,7 @@ export function HeroSection({ standalone = false }: HeroSectionProps) {
             </motion.p>
 
             <motion.p
-              className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0"
+              className="text-lg md:text-xl text-muted-foreground mb-8 mx-auto max-w-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -109,7 +82,7 @@ export function HeroSection({ standalone = false }: HeroSectionProps) {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
