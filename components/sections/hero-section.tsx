@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Download, ArrowRight, Code, Brain, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import Image from "next/image"
 
 interface HeroSectionProps {
@@ -45,6 +45,7 @@ export function HeroSection({ standalone = false }: HeroSectionProps) {
     >
       <div className="container mx-auto px-4 py-20">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
+
           {/* Photo Section */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -54,21 +55,21 @@ export function HeroSection({ standalone = false }: HeroSectionProps) {
           >
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full blur-2xl animate-pulse" />
+
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl glass">
                 <Image
-                  src="public/profile-photo.jpg"
-                  alt="Shivashanthveer N"
-                  fill
-                  className="object-cover"
+                  src="/profile-photo.jpg"
+                  alt="Shivashanthveer"
+                  width={500}
+                  height={500}
+                  className="object-cover w-full h-full"
                   priority
-                  sizes="(max-width: 768px) 256px, (max-width: 1024px) 320px, 384px"
                 />
               </div>
+
               <motion.div
                 className="absolute -bottom-4 left-1/2 -translate-x-1/2"
-                animate={{
-                  y: [0, -10, 0],
-                }}
+                animate={{ y: [0, -10, 0] }}
                 transition={{
                   duration: 3,
                   repeat: Infinity,
@@ -97,66 +98,51 @@ export function HeroSection({ standalone = false }: HeroSectionProps) {
               Shivashanthveer N
             </motion.h1>
 
-          <motion.p
-            className="text-2xl md:text-3xl text-muted-foreground mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            AI/ML Engineer | Developer  | Learner
-          </motion.p>
-
-          <motion.p
-            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            I build practical AI that ships — from legal chatbots to intrusion
-            detection and voice automation.
-          </motion.p>
-
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <Button
-              size="lg"
-              onClick={scrollToProjects}
-              className="group"
+            <motion.p
+              className="text-2xl md:text-3xl text-muted-foreground mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
-              View Projects
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
+              AI/ML Engineer | Developer | Learner
+            </motion.p>
+
+            <motion.p
+              className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <a href="/Resume- ShivashanthveerAT.pdf" download>
-                <Download className="mr-2 h-4 w-4" />
-                Download Resume
-              </a>
-            </Button>
+              I build practical AI that ships — from legal chatbots to intrusion
+              detection and voice automation.
+            </motion.p>
+
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Button size="lg" onClick={scrollToProjects} className="group">
+                View Projects
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+
+              <Button size="lg" variant="outline" asChild>
+                <a href="/Resume- ShivashanthveerAT.pdf" download>
+                  <Download className="mr-2 h-4 w-4" />
+                  Download Resume
+                </a>
+              </Button>
+            </motion.div>
           </motion.div>
-        </motion.div>
         </div>
 
         {/* Animated Gradient Blob */}
         <motion.div
           className="absolute top-1/2 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-10"
-          animate={{
-            scale: [1, 1.2, 1],
-            x: [0, 50, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          animate={{ scale: [1, 1.2, 1], x: [0, 50, 0], y: [0, -50, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
 
         {/* Floating Icons */}
@@ -171,12 +157,7 @@ export function HeroSection({ standalone = false }: HeroSectionProps) {
                 y: [0, -20, 0],
                 x: [0, Math.random() * 50 - 25, 0],
               }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                delay,
-                ease: "easeInOut",
-              }}
+              transition={{ duration: 4, repeat: Infinity, delay, ease: "easeInOut" }}
               style={{
                 left: `${20 + delay * 30}%`,
                 top: `${30 + delay * 20}%`,
@@ -190,5 +171,3 @@ export function HeroSection({ standalone = false }: HeroSectionProps) {
     </section>
   )
 }
-
-
