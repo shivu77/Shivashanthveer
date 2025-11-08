@@ -56,7 +56,7 @@ export function HeroSection({ standalone = false }: HeroSectionProps) {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full blur-2xl animate-pulse" />
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl glass">
                 <Image
-                  src="/profile-photo.jpg"
+                  src="public/profile-photo.jpg"
                   alt="Shivashanthveer N"
                   fill
                   className="object-cover"
